@@ -1,4 +1,9 @@
+// git remote add revision
+// git push revision master
+// "revision" is my keyword
+
 import 'package:flutter/material.dart';
+import 'home.dart';
 
 void main() {
   runApp(const MyApp());
@@ -50,13 +55,17 @@ class LoginPage extends StatelessWidget {
           //creating a button to get and store/send this info
           ElevatedButton(
               onPressed: () {
-                String email =
-                    emailText.text.toString(); //storing var in string variable
-                String password = passwordText.text
-                    .toString(); //storing var in string variable
-                print("Email: $email and Password: $password");
+                // String email =
+                //     emailText.text.toString(); //storing var in string variable
+                // String password = passwordText.text
+                //     .toString(); //storing var in string variable
+                // print("Email: $email and Password: $password");
+
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return HomePage();
+                }));
               },
-              child: Text('Login'))
+              child: Text('Login')) //working very well
         ],
       ),
     );
