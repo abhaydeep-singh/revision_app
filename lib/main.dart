@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.pink),
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
         useMaterial3: true,
       ),
       home: LoginPage(),
@@ -36,37 +36,41 @@ class LoginPage extends StatelessWidget {
     //main work start from here scafold
     return Scaffold(
       appBar: AppBar(title: Text('Login Page')),
-      body: Column(
-        children: [
-          SizedBox(
-            height: 200,
-          ),
-          TextField(
-            controller: emailText, // pointing to email variable
-            decoration: InputDecoration(label: Text('Email')),
-            keyboardType: TextInputType.emailAddress,
-          ),
-          SizedBox(height: 50),
-          TextField(
-            controller: passwordText, // pointing to password variable
-            decoration: InputDecoration(label: Text('Password')),
-            obscureText: true,
-          ),
-          //creating a button to get and store/send this info
-          ElevatedButton(
-              onPressed: () {
-                // String email =
-                //     emailText.text.toString(); //storing var in string variable
-                // String password = passwordText.text
-                //     .toString(); //storing var in string variable
-                // print("Email: $email and Password: $password");
+      body: Padding(
+        padding: const EdgeInsets.all(15.0),
+        child: Column(
+          children: [
+            SizedBox(
+              height: 200,
+            ),
+            TextField(
+              controller: emailText, // pointing to email variable
+              decoration: InputDecoration(label: Text('Email')),
+              keyboardType: TextInputType.emailAddress,
+            ),
+            SizedBox(height: 50),
+            TextField(
+              controller: passwordText, // pointing to password variable
+              decoration: InputDecoration(label: Text('Password')),
+              obscureText: true,
+            ),
+            SizedBox(height: 20),
+            //creating a button to get and store/send this info
+            ElevatedButton(
+                onPressed: () {
+                  // String email =
+                  //     emailText.text.toString(); //storing var in string variable
+                  // String password = passwordText.text
+                  //     .toString(); //storing var in string variable
+                  // print("Email: $email and Password: $password");
 
-                Navigator.push(context, MaterialPageRoute(builder: (context) {
-                  return HomePage();
-                }));
-              },
-              child: Text('Login')) //working very well
-        ],
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return HomePage();
+                  }));
+                },
+                child: Text('Login')) //working very well
+          ],
+        ),
       ),
     );
   }
